@@ -1,9 +1,9 @@
 import '../styles/globals.css'
 import {CartProvider} from "../context/cart";
-import {ThemeProvider} from "../context/theme";
 import {useEffect, useState} from "react";
 import {FoodProvider} from "../context/food";
 import { CookiesProvider } from "react-cookie"
+import {ToastContainer} from "react-toastify";
 
 function MyApp({Component, pageProps}) {
 
@@ -22,13 +22,12 @@ function MyApp({Component, pageProps}) {
     return (
 
     <CookiesProvider>
-        <ThemeProvider>
             <CartProvider>
                 <FoodProvider>
                     <Component {...pageProps} />
+                    <ToastContainer/>
                 </FoodProvider>
             </CartProvider>
-        </ThemeProvider>
     </CookiesProvider>
     )
 }}

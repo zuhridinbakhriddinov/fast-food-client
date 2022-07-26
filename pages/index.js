@@ -1,6 +1,9 @@
 import Head from 'next/head'
-import Navbar from "../components/Navbar";
 import MenuList from "../components/menu/MenuList";
+import Nav from "../components/Nav";
+import Banner from "../components/Banner";
+import Footer from "../components/footer/Footer";
+import AboutUs from "../components/about/AboutUs";
 
 
 export default function Home() {
@@ -14,14 +17,15 @@ export default function Home() {
       </Head>
 
         <main>
-            <Navbar/>
+            <Nav/>
+            <Banner/>
             <div className="container  mx-6 my-2" id="menu">
                 <MenuList/>
             </div>
         </main>
+<AboutUs/>
 
-
-
+<Footer/>
 
     </div>
   )

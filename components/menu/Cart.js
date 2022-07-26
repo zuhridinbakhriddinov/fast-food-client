@@ -1,24 +1,22 @@
 const Cart = () => {
     function getImage(food) {
-        return "http://localhost:8081/getFile/" + food.imgId
+        return "http://localhost:8081/api/v1/getFile/" + food.imgId
     }
 
     const [cart, setCart] = useCartContext();
 
 
-
-
-    const changeQtn = (action, id,name, price, imgId) => {
+    const changeQtn = (action, id, name, price, imgId) => {
         const myCart = cart.find(value => value.id === id);
         const qtn = action === '+' ? myCart.qtn + 1 : myCart.qtn - 1
-        if (qtn > 0){
+        if (qtn > 0) {
+            console.log("ADDED TO CART LOCAL")
             setCart([...cart.filter(value => value.id !== id), {
-                id, qtn,name, price, imgId
+                id, qtn, name, price, imgId
 
             }])
-        console.log(cart)
-        }
-        else
+
+        } else
             setCart([...cart.filter(value => value.id !== id)])
 
 
@@ -39,9 +37,15 @@ const Cart = () => {
                         <p className={'text-black'}>price {items.price}</p>
                         <div className={"flex justify-around"}>
 
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => changeQtn('-', items.id,items.name, items.price, items.imgId)}>-</button>
+                            <button
+                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                                onClick={() => changeQtn('-', items.id, items.name, items.price, items.imgId)}>-
+                            </button>
                             <h1 className="text-black">{items.qtn}</h1>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={() => changeQtn('+', items.id,items.name, items.price, items.imgId)}>+</button>
+                            <button
+                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                                onClick={() => changeQtn('+', items.id, items.name, items.price, items.imgId)}>+
+                            </button>
                         </div>
 
                     </div>
