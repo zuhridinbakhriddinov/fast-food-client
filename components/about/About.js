@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from "next/link";
+import {Image} from "react-bootstrap";
 
 const About = () => {
     return (
@@ -12,7 +13,7 @@ const About = () => {
             <div className="justify-start flex">
 
                 <div>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlOsi0UvWXGifCtV7AQrGTm1BkE3sPY8Jf6Q&usqp=CAU" className="ml-60 d-block w-80 h-60 mt-20 rounded-2xl " alt="..."/>
+                    <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlOsi0UvWXGifCtV7AQrGTm1BkE3sPY8Jf6Q&usqp=CAU" className="ml-60 d-block w-80 h-60 mt-20 rounded-2xl " alt="..."/>
                 </div>
 
 
@@ -34,6 +35,7 @@ const About = () => {
                         <Link href="http://localhost:3000/">
                             <button
                                 className=" bg-red-500 text-white  py-2 px-12 rounded ml-24 mt-6 hover:scale-110">Menyuni
+                                {/* eslint-disable-next-line react/no-unescaped-entities */}
                                 ko'rish
                             </button>
                         </Link>

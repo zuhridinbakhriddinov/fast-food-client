@@ -51,6 +51,10 @@ const Index = () => {
                     <a href={'/orderHistory'}>Order History </a>
                 </button>
             </header>
+
+
+                {totalPages?
+                    <div>
             <div className="relative w-50 h-50 overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead
@@ -118,7 +122,12 @@ const Index = () => {
                 {console.log(totalPages >= page)}
 
             </footer>
-
+            </div>
+            : <div>
+                        {/* eslint-disable-next-line react/no-unescaped-entities */}
+                        <h2 className={'text-red-600 text-xxl ml-4 mt-2'}>you don't order yet</h2>
+                    </div>
+            }
 
 
         </div>

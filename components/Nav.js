@@ -84,7 +84,7 @@ function Nav() {
         if (phoneNumberForRegister === null) {
             toast.error("Phone number not blank")
         } else {
-            axios.get('http://localhost:8081/api/v1/verification/send/forRegister/' + phoneNumberForRegister)
+            axios.get('https://fast-food-app-server.herokuapp.com/api/v1/verification/send/forRegister/' + phoneNumberForRegister)
                 .then(function (response) {
                     toast.success(response.data.message)
                     setRegisterUserDto({...registerUserDto, phoneNumber: phoneNumberForRegister});
@@ -102,7 +102,7 @@ function Nav() {
 
     function smsCodeForLogin() {
 
-        axios.get('http://localhost:8081/api/v1/verification/send/forLogin/' + phoneNumberForLogin)
+        axios.get('https://fast-food-app-server.herokuapp.com/api/v1/verification/send/forLogin/' + phoneNumberForLogin)
             .then(function (response) {
                 //console.log(messageService(response))
 
@@ -131,7 +131,7 @@ function Nav() {
     };
 
     function registerUser() {
-        axios.post('http://localhost:8081/api/v1/auth/register', {
+        axios.post('https://fast-food-app-server.herokuapp.com/api/v1/auth/register', {
             "fullName": registerUserDto.fullName,
             "phoneNumber": registerUserDto.phoneNumber,
             "smsCode": registerUserDto.smsCode
@@ -167,7 +167,7 @@ function Nav() {
     }
 
     function loginUser() {
-        axios.post('http://localhost:8081/api/v1/auth/login', {
+        axios.post('https://fast-food-app-server.herokuapp.com/api/v1/auth/login', {
                 "phoneNumber": loginUserDto.phoneNumber,
                 "smsCode": loginUserDto.smsCode
             },
@@ -386,31 +386,33 @@ function Nav() {
                             <div className="hidden md:block w-120   ">
                                 <div className="ml-10 flex items-baseline space-x-4">
                                     <div className={'mb-10'}>
+                                        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                                         <a
                                             href="/"
                                             className=" hover:bg-gray-700 text-white px-3  rounded-md text-sm font-medium">
-                                            Menu
+                                            {t.Menu}
                                         </a>
 
+                                        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                                         <a
                                             href="/myOrders"
                                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3  rounded-md text-sm font-medium"
                                         >
-                                            My order
+                                            {t.My} {t.order}
                                         </a>
 
                                         <a
                                             href="/about"
                                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3  rounded-md text-sm font-medium"
                                         >
-                                            About
+                                            {t.About}
                                         </a>
 
                                         <a
                                             href="/contact"
                                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3  rounded-md text-sm font-medium"
                                         >
-                                            Contact
+                                            {t.Contact}
                                         </a>
                                     </div>
 
@@ -744,6 +746,7 @@ function Nav() {
                     {(ref) => (
                         <div className="md:hidden" id="mobile-menu">
                             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                                 <a
                                     href="/"
                                     className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
@@ -751,6 +754,7 @@ function Nav() {
                                     Menu
                                 </a>
 
+                                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                                 <a
                                     href="/myOrders"
                                     className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"

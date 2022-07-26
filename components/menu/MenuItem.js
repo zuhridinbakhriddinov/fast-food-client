@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useCartContext} from "../../context/cart";
 import {toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import {Image} from "react-bootstrap";
 
 
 /*const MenuItem = (props) => {
@@ -159,10 +160,10 @@ const MenuItem = (props) => {
     return (
 
           <div
-              className=" bg-white border border-gray-100 transition transform duration-700 hover:shadow-xl hover:scale-105 p-4 rounded-lg relative">
+              className=" bg-white border border-gray-100 duration-300  hover:shadow-xl hover:scale-105 p-4 rounded-lg ">
                 <span
                     className="bg-red-100 border border-red-500 rounded-full text-primary text-sm poppins px-4 py-1 inline-block mb-4 ">{foodType}</span>
-              <img className="w-64 h-60 mx-auto transform transition duration-300 hover:scale-105" src={imgUrl} alt=""/>
+              <Image className="w-64 h-60 mx-auto  duration-300 hover:scale-105" src={imgUrl} alt=""/>
 
               <div className="flex flex-col items-center my-3 space-y-2">
                   <h1 className="text-gray-900 poppins text-lg">{name}</h1>

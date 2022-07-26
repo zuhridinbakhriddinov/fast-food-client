@@ -6,6 +6,7 @@ import {useRouter} from "next/router";
 import en from "../../locales/en/en";
 import uz from "../../locales/uz/uz";
 import Nav from "../Nav";
+import {Image} from "react-bootstrap";
 
 
 const Checkout = () => {
@@ -239,14 +240,7 @@ const Checkout = () => {
                             <div className="text-sm font-medium ml-3">{t.CHECKOUT}</div>
                         </div>
 
-                     {/*   <div
-                            className=" sm:relative sm:top-auto sm:right-auto ml-auto right-4 top-4 text-gray-400 hover:text-gray-800 cursor-pointer">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                      d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </div>*/}
+
 
                     </div>
                     {/*<div className="rounded-md">
@@ -379,9 +373,10 @@ const Checkout = () => {
 
                         <ul className="py-6 border-b space-y-6 px-8">
                             {cart.map((items, i) => (
+                                // eslint-disable-next-line react/jsx-key
                                 <li className="grid grid-cols-6 gap-2 border-b-1">
                                     <div className="col-span-1 self-center">
-                                        <img src={getImage(items)} alt="Product" className="rounded w-full"/>
+                                        <Image src={getImage(items)} alt="Product" className="rounded w-full"/>
                                     </div>
                                     <div className="flex flex-col col-span-3 pt-2">
                                         <span className="text-gray-600 text-md font-semi-bold">{items.name}</span>

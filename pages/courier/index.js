@@ -1,5 +1,4 @@
-import React from 'react';
-import Cook from "../../components/cook/Cook";
+ import React from 'react';
 import Courier from "../../components/Courier";
 
 const Index = () => {

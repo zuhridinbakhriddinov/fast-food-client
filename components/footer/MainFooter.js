@@ -1,4 +1,5 @@
 import React from 'react'
+import {Image} from "react-bootstrap";
 
 const MainFooter = () => {
     // footer links 
@@ -21,7 +22,7 @@ const MainFooter = () => {
             {/* logo  */}
             <div className="flex flex-grow">
               <div>
-                <img className="w-50" src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/100/000000/external-burger-fast-food-vitaliy-gorbachev-lineal-color-vitaly-gorbachev-1.png" alt="logo" />
+                <Image className="w-50" src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/100/000000/external-burger-fast-food-vitaliy-gorbachev-lineal-color-vitaly-gorbachev-1.png" alt="logo" />
               </div>
                 <div>
                 <h1  className={'ml-12 mt-4 text-yellow-200 text-[54px]'}>Zukich food</h1>
