@@ -32,7 +32,9 @@ const PreparingOrders = () => {
             });
 
 
-    }, [page, totalPages]);
+    },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [page, totalPages]);
 
     function changeReady(id) {
 

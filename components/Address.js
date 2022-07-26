@@ -20,7 +20,9 @@ const Address = () => {
             });
 
 
-    }, [userId]);
+    },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [userId]);
     console.log(userId+' <<<<<<<<<<<<<<')
     let token = localStorage.getItem('accessToken');
     const headers = {
@@ -45,7 +47,9 @@ const Address = () => {
             });
 
 
-    }, [userId]);
+    },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [userId]);
 
 
     useEffect(() => {
@@ -62,7 +66,9 @@ const Address = () => {
             });
 
 
-    }, [])
+    },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [])
     const deleteFunc = (id) => {
         address.map((a => {
             if (a.id === id) {

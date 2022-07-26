@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import axios from "axios";
 
 const AboutMe = () => {
@@ -9,7 +9,10 @@ const AboutMe = () => {
     };
 
     const[user,setUser]=useState();
-    useEffect(() => {
+
+
+
+    const aboutMe=()=>{
         axios.get('https://fast-food-app-server.herokuapp.com/api/v1/auth/me',{headers:headers})
             .then(function (response) {
 
@@ -23,8 +26,15 @@ const AboutMe = () => {
                 console.log(error);
             });
 
+    };
+    useEffect(() => {
+      aboutMe();
 
-    }, []);
+    },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        []);
+
+
 
 
 
