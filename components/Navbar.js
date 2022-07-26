@@ -1,3 +1,4 @@
+/*
 import React, {Fragment, useState} from 'react';
 import Link from "next/link";
 import {useCartContext} from "../context/cart";
@@ -166,8 +167,8 @@ const Navbar = () => {
                     toast.error('Error', {toastId: 'error' + Math.random()})
                 }
 
-                /*    console.log(error);
-                    toast.error(error.response.data.errors.errorMsg)*/
+                /!*    console.log(error);
+                    toast.error(error.response.data.errors.errorMsg)*!/
             });
     }
 
@@ -216,14 +217,14 @@ const Navbar = () => {
 
 
     let accessToken = localStorage.getItem('accessToken') ? localStorage.getItem('accessToken') : null
-    /*  const router = useRouter();
+    /!*  const router = useRouter();
       let {t} = useTranslation('common');
-      const contact = t('contact');*/
+      const contact = t('contact');*!/
     const router = useRouter();
     const {locale} = router;
     const t = locale === 'en' ? en : uz;
     return (
-        /*--------------------------------------------------------------------------------------------------------------------*/
+        /!*--------------------------------------------------------------------------------------------------------------------*!/
 
 
 
@@ -238,7 +239,7 @@ const Navbar = () => {
                 </div>
 
 
-                {/*                                for register                  */}
+                {/!*                                for register                  *!/}
                 <CustomModal visible={showModal} onClose={() => setShowModal(false)}>
                     <div className="bg-white w-96 p-5 rounded">
                         <h1 className="font-bold text-center text-2xl text-yellow-300">
@@ -269,7 +270,7 @@ const Navbar = () => {
                     }}>Kirish</Button>
                     </div>
                 </CustomModal>
-                {/*------------------------------- for register sms code and name  -----------------------------------------------------*/}
+                {/!*------------------------------- for register sms code and name  -----------------------------------------------------*!/}
                 <CustomModal visible={showModal2} onClose={() => setShowModal2(false)}>
                     <div className="bg-white w-96 p-5 rounded">
                         <h1 className="font-bold  text-2xl text-black">
@@ -304,7 +305,7 @@ const Navbar = () => {
 
                     </div>
                 </CustomModal>
-                {/*-----------------------------login for number  -------------------------------------------------------*/}
+                {/!*-----------------------------login for number  -------------------------------------------------------*!/}
                 <CustomModal visible={showModal3} onClose={() => setShowModal3(false)}>
                     <div className="bg-white w-96 p-5 rounded">
                         <h1 className="font-bold  text-2xl text-black">
@@ -337,7 +338,7 @@ const Navbar = () => {
 
                     </div>
                 </CustomModal>
-                {/*-----------------------------login for sms code  -------------------------------------------------------*/}
+                {/!*-----------------------------login for sms code  -------------------------------------------------------*!/}
                 <CustomModal visible={showModal4} onClose={() => setShowModal4(false)}>
                     <div className="bg-white w-96 p-5 rounded">
                         <h1 className="font-bold  text-2xl text-black">
@@ -586,7 +587,7 @@ const Navbar = () => {
                                 </Menu>
                             </div>
 
-                            {/*    <img className="object-cover object-center" src="/person1.png" alt="profile-image"/>*/}
+                            {/!*    <img className="object-cover object-center" src="/person1.png" alt="profile-image"/>*!/}
                         </div> :
 
                         <div id="profile-image" className="w-14 h-14 border rounded-full overflow-hidden">
@@ -648,7 +649,7 @@ const Navbar = () => {
                                     </Transition>
                                 </Menu>
                             </div>
-                            {/*    <img className="object-cover object-center" src="/person1.png" alt="profile-image"/>*/}
+                            {/!*    <img className="object-cover object-center" src="/person1.png" alt="profile-image"/>*!/}
                         </div>
                     }
 
@@ -667,3 +668,4 @@ const Navbar = () => {
 
 export default Navbar;
 
+*/

@@ -1,3 +1,5 @@
+import {Image} from "react-bootstrap";
+
 const Cart = () => {
     function getImage(food) {
         return "http://localhost:8081/api/v1/getFile/" + food.imgId
@@ -30,7 +32,7 @@ const Cart = () => {
                         <p className={'text-black'}>name {items.name}</p>
                     </div>
                     <div className={'card-img'}>
-                        <img src={getImage(items)}/>
+                        <Image alt="..." src={getImage(items)}/>
                     </div>
                     <div className={'card-body'}>
 

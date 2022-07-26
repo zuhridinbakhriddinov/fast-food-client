@@ -21,6 +21,7 @@ import SlideOver from "./ui/SlideOverContent";
 import Cart from "./menu/Cart";
 import {ChevronDownIcon} from "@heroicons/react/solid";
 import {changeLanguage} from "../constants/api";
+import {Image} from "react-bootstrap";
 
 function Nav() {
     let phoneNumberForRegister;
@@ -243,7 +244,7 @@ function Nav() {
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center">
                             <div className="flex-shrink-0 flex">
-                                <img onClick={() => window.location.href = "/"}
+                                <Image onClick={() => window.location.href = "/"}
                                      className="h-8 w-8 m-2"
                                      src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/100/000000/external-burger-fast-food-vitaliy-gorbachev-lineal-color-vitaly-gorbachev-1.png"
                                      alt="Workflow"
@@ -394,26 +395,26 @@ function Nav() {
                                         </a>
 
                                         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                                        <a
+                                        <Link
                                             href="/myOrders"
                                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3  rounded-md text-sm font-medium"
                                         >
                                             {t.My} {t.order}
-                                        </a>
+                                        </Link>
 
-                                        <a
+                                        <Link
                                             href="/about"
                                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3  rounded-md text-sm font-medium"
                                         >
                                             {t.About}
-                                        </a>
+                                        </Link>
 
-                                        <a
+                                        <Link
                                             href="/contact"
                                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3  rounded-md text-sm font-medium"
                                         >
                                             {t.Contact}
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className={'mr-15'}>
@@ -479,7 +480,7 @@ function Nav() {
                                                             :
                                                             <div>
                                                                 <div className={'mx-auto my-32'}>
-                                                                    <img src={'s2.png'}/>
+                                                                    <Image alt="..." src={'s2.png'}/>
                                                                 </div>
 
                                                                 <h6 className={'font-bold leading-7 text-2xl mx-2 my-2 text-cyan-800'}>Your
@@ -508,7 +509,7 @@ function Nav() {
                                                                 className="inline-flex object-center  w-full justify-center rounded-md bg-white bg-opacity-10  text-sm font-medium text-white
                                               focus:outline-none focus-visible:ring-2 focus-visible:ring-white
                                                 focus-visible:ring-opacity-75">
-                                                                <img className="object-cover object-center  "
+                                                                <Image className="object-cover object-center  "
                                                                      src="/person1.png"
                                                                      alt="profile-image"/>
                                                             </Menu.Button>
@@ -625,7 +626,7 @@ function Nav() {
                                                         <div>
                                                             <Menu.Button
                                                                 className="inline-flex object-center  w-full justify-center rounded-md bg-white bg-opacity-10 px-2 py-2 text-sm font-medium text-white  focus:outline-none focus-visible:ring-2 focus-visible:ring-white  focus-visible:ring-opacity-75">
-                                                                <img className="object-cover object-center"
+                                                                <Image className="object-cover object-center"
                                                                      src="https://img.icons8.com/color/100/000000/denied-skin-type-7.png"
                                                                      alt="profile-image"/>
                                                                 <ChevronDownIcon
@@ -755,26 +756,26 @@ function Nav() {
                                 </a>
 
                                 {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                                <a
+                                <Link
                                     href="/myOrders"
                                     className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                                 >
                                     My orders
-                                </a>
+                                </Link>
 
-                                <a
+                                <Link
                                     href="/contact"
                                     className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                                 >
                                     Contact
-                                </a>
+                                </Link>
 
-                                <a
+                                <Link
                                     href="/about"
                                     className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                                 >
                                     About
-                                </a>
+                                </Link>
 
 
                             </div>

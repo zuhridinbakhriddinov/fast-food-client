@@ -93,6 +93,7 @@ const UnreadyOrders = () => {
                             </td>
                             <td className="px-6 py-4">
                                 <button onClick={() => changeReady(items.id)} className={'w-10 h-10'}><Image
+                                    alt="..."
                                     src={'success2.png'}/></button>
                             </td>
 
