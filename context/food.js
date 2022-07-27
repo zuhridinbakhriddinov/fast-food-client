@@ -16,7 +16,7 @@ export const FoodProvider = ({children}) => {
     const {locale} = router;
     const t = locale === 'en' ? en : uz;
     console.log(t)
-    let url = "http://localhost:8081/api/v1/food/getFoods/" + lan
+    let url = "https://fast-food-app-server.herokuapp.com/api/v1/food/getFoods/" + lan
     useEffect(() => {
 
 
