@@ -1,8 +1,7 @@
 export default {
 
     Menu:'Menyu',
-    My:'Mening',
-    order:'buyurtmalarim',
+    My_orders:'My buyurtmalarim',
     About:'Biz haqimizda',
     Contact:'Bo`glanish',
     CHECKOUT:'Sotib olish',

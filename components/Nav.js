@@ -395,26 +395,27 @@ function Nav() {
                                         </a>
 
                                         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-                                        <Link
+                                        <a
                                             href="/myOrders"
                                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3  rounded-md text-sm font-medium"
                                         >
-                                            {t.My} {t.order}
-                                        </Link>
 
-                                        <Link
+                                            {t.My_orders}
+                                        </a>
+                                        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                                        <a
                                             href="/about"
                                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3  rounded-md text-sm font-medium"
                                         >
                                             {t.About}
-                                        </Link>
-
-                                        <Link
+                                        </a>
+                                        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                                        <a
                                             href="/contact"
                                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3  rounded-md text-sm font-medium"
                                         >
                                             {t.Contact}
-                                        </Link>
+                                        </a>
                                     </div>
 
                                     <div className={'mr-15'}>

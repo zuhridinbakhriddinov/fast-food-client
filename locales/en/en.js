@@ -1,8 +1,7 @@
 export default {
 
     Menu:'Menu',
-    My:'My',
-    order:'order',
+    My_orders:'My orders',
     About:'About',
     Contact:'Contact',
     CHECKOUT:'Checkout',
