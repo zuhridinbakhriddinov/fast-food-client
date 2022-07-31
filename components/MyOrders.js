@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import Button from "./ui/Button";
 import moment from "moment";
+import {api} from "../constants/api";
 
 const MyOrders = () => {
 
@@ -23,7 +24,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         console.log(page + ' shu page ')
-        axios.get(`http://localhost:8081/order/recently?page=${page}`, {headers: headers})
+        axios.get(api.host+`/order/recently?page=${page}`, {headers: headers})
             .then(function (response) {
 
                 console.log(response.data.data.content)

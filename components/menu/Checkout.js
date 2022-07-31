@@ -7,13 +7,14 @@ import en from "../../locales/en/en";
 import uz from "../../locales/uz/uz";
 import Nav from "../Nav";
 import {Image} from "react-bootstrap";
+import {api} from "../../constants/api";
 
 
 const Checkout = () => {
     let redirectUrl = "";
 
     function getImage(food) {
-        return "http://localhost:8081/api/v1/getFile/" + food.imgId
+        return api.host+"/api/v1/getFile/" + food.imgId
     }
 
     const [option, setOption] = useState([{}])
@@ -58,7 +59,7 @@ const Checkout = () => {
     orderItems.orderInfo.addressId = option
 
     useEffect(() => {
-        axios.get('http://localhost:8081/api/payments/getPayType')
+        axios.get(api.host+'/api/payments/getPayType')
             .then(function (response) {
 
                 setPayType(response.data)
@@ -71,7 +72,7 @@ const Checkout = () => {
 
     useEffect(() => {
 
-        axios.get('http://localhost:8081/api/address/e4db33a3-7b82-4548-abe5-0f78dc406200')
+        axios.get(api.host+'/api/address/e4db33a3-7b82-4548-abe5-0f78dc406200')
             .then(function (response) {
 
                 console.log(response)
@@ -135,7 +136,7 @@ const Checkout = () => {
 
     const purchase = () => {
         console.log(orderItems)
-        axios.post('http://localhost:8081/order/purchase-products', {
+        axios.post(api.host+'/order/purchase-products', {
             'orderItem': orderItems.orderItem,
 
             'orderInfo': {

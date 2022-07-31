@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import axios from "axios";
+import {api} from "../constants/api";
 
 const AboutMe = () => {
     let token = localStorage.getItem('accessToken');
@@ -13,7 +14,7 @@ const AboutMe = () => {
 
 
     const aboutMe=()=>{
-        axios.get('https://fast-food-app-server.herokuapp.com/api/v1/auth/me',{headers:headers})
+        axios.get(api.host+'/api/v1/auth/me',{headers:headers})
             .then(function (response) {
 
                 console.log(response)

@@ -3,127 +3,12 @@ import {useCartContext} from "../../context/cart";
 import {toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import {Image} from "react-bootstrap";
+import {api} from "../../constants/api";
 
 
-/*const MenuItem = (props) => {
-
-    const {id, name, price, imgId} = props;
-
-    const [cart, setCart] = useCartContext();
-
-    const foundItemFromCart = cart.find(element => element.id === id);
-
-    const addToCart = (id, price, name, imgId) => {
-
-
-        setCart([...cart, {id, qtn: 1, price, name, imgId}])
-
-
-    }
-
-    const changeQtn = (action, id, name, price, imgId) => {
-        const food = cart.find(value => value.id === id);
-        const qtn = action === '+' ? food.qtn + 1 : food.qtn - 1
-
-        if (qtn > 0) {
-
-            setCart([...cart.filter(value => value.id !== id), {
-                id, qtn, name, price, imgId
-
-            }
-            ])
-            cart.sort()
-        } else
-            setCart([...cart.filter(value => value.id !== id)])
-
-
-    }
-    const img = "http://localhost:8081/api/v1/getFile/" + imgId
-
-
-    return (
-        <div>
-
-
-            <div className="flex justify-center items-center   ">
-                <div
-                    className="
-          bg-white
-          shadow-md
-          h-96
-          mx-3
-          rounded-2xl
-          flex flex-col
-          justify-around
-          items-center
-          overflow-hidden
-          sm:flex-row sm:h-52 sm:w-3/5
-          md:w-96
-        "
-                >
-                    <img
-                        className="h-1/2 w-full sm:h-full sm:w-1/2 object-cover"
-                        src={img}
-                        alt="image"
-                    />
-
-                    <div
-                        className=" flex-1  w-full
-            flex flex-col
-            items-baseline
-            justify-around
-            h-1/2
-            pl-6
-            sm:h-full sm:items-baseline sm:w-1/2">
-                        <div className="flex flex-col justify-start items-baseline">
-                            <h1 className="text-lg font-normal mb-0 text-gray-600 font-sans">
-                                {name}
-                            </h1>
-
-                        </div>
-                        <p className="text-xs text-gray-500 w-4/5">
-                            Ergonimical for human body curv
-                        </p>
-                        <div className="w-full flex justify-between items-center">
-                            <h1 className="font-bold text-gray-500">${price}</h1>
-                            {
-                                foundItemFromCart ?
-                                    <div className={"h-25 w-20 flex justify-content-between"}>
-                                        {/!*bg-blue-500 hover:bg-blue-700 text-yellow font-bold py-2 px-4 rounded-full*!/}
-                                        <button
-                                            className="bg-blue-500 hover:bg-blue-700 text-yellow font-bold py-1 px-3 rounded-full"
-                                            onClick={() => changeQtn('-', id, name, price, imgId)}>-
-                                        </button>
-                                        <h1 className={'font-lg'}>{foundItemFromCart.qtn}</h1>
-                                        <button
-                                            className="bg-blue-500 hover:bg-blue-700 text-yellow font-bold py-1 px-3 rounded-full"
-                                            onClick={() => changeQtn('+', id, name, price, imgId)}>+
-                                        </button>
-                                    </div>
-                                    :
-                                    <div className={"flex justify-content-between"}>
-                                        <button
-                                            onClick={() => addToCart(id, price, name, imgId)}
-                                            className="mt-4 inline-flex items-center py-2 px-3
-                       text-sm font-medium text-center text-white bg-blue-700
-                       rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none
-                        focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                            Add to cart
-
-                                            <i className="mx-2 fas fa-shopping-cart"></i>
-                                        </button>
-                                    </div>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};*/
 const MenuItem = (props) => {
     const {id, name, price, imgId, foodType} = props;
-    const imgUrl = "http://localhost:8081/api/v1/getFile/" + imgId;
+    const imgUrl = api.host+"/api/v1/getFile/" + imgId;
     const notify = () => toast.success(props.name + " savatga qo'shildi", {
         theme: "colored"
     })

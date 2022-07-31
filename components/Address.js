@@ -2,11 +2,12 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {toast} from "react-toastify";
 import CustomModal from "./ui/CustomModal";
+import {api} from "../constants/api";
 
 const Address = () => {
     const[userId,setUserId]=useState();
     useEffect(() => {
-        axios.get('https://fast-food-app-server.herokuapp.com/api/v1/auth/me',{headers:headers})
+        axios.get(api.host+'/api/v1/auth/me',{headers:headers})
             .then(function (response) {
 
                 console.log(response)
@@ -34,7 +35,7 @@ const Address = () => {
 
     useEffect(() => {
 
-        axios.get(`https://fast-food-app-server.herokuapp.com/api/address/${userId}`,{headers:headers})
+        axios.get(api.host+`/api/address/${userId}`,{headers:headers})
             .then(function (response) {
 
                 console.log(response)
@@ -53,7 +54,7 @@ const Address = () => {
 
 
     useEffect(() => {
-        axios.get('https://fast-food-app-server.herokuapp.com/api/district',{headers:headers})
+        axios.get(api.host+'/api/district',{headers:headers})
             .then(function (response) {
 
                 console.log(response)
@@ -76,7 +77,7 @@ const Address = () => {
             }
         }))
         setAddress(address)
-        axios.delete('https://fast-food-app-server.herokuapp.com/api/address/' + id,{headers:headers})
+        axios.delete(api.host+'/api/address/' + id,{headers:headers})
             .then(function (response) {
                 console.log(response)
                 toast.success("Successfully deleted")
@@ -146,7 +147,7 @@ const Address = () => {
     responseAddress.districtId = option
 
     const addAddress = () => {
-        axios.post('https://fast-food-app-server.herokuapp.com/api/address', {
+        axios.post(api.host+'/api/address', {
                 userId: userId,
                 name: responseAddress.name,
                 districtId: responseAddress.districtId,
@@ -175,17 +176,7 @@ const Address = () => {
 
 
     return (
-        /*
-    UUID userId;
-    String name;
-    UUID districtId;
-    String landmark;
-    Integer houseNumber;
-    Integer entrance;
-    Integer flat;
-    Integer floor;
-    float latitude;
-    float longitude;*/
+
         <div>
 
             <CustomModal visible={showModal} onClose={() => setShowModal(false)}>

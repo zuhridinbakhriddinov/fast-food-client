@@ -2,7 +2,7 @@ import {Image} from "react-bootstrap";
 
 const Cart = () => {
     function getImage(food) {
-        return "http://localhost:8081/api/v1/getFile/" + food.imgId
+        return api.host+"/api/v1/getFile/" + food.imgId
     }
 
     const [cart, setCart] = useCartContext();
@@ -67,6 +67,7 @@ import React from 'react';
 import {useCartContext} from "../../context/cart";
 
 import {useFoodContext} from "../../context/food";
+import {api} from "../../constants/api";
 
 
 export default Cart;

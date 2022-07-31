@@ -4,6 +4,7 @@ import moment from "moment";
 import Button from "../ui/Button";
 import {toast} from "react-toastify";
 import {Image} from "react-bootstrap";
+import {api} from "../../constants/api";
 
 const UnreadyOrders = () => {
     const [recentlyOrders, setRecentlyOrders] = useState([]);
@@ -18,7 +19,7 @@ const UnreadyOrders = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:8081/api/cook/getAcceptedOrders?page=${page}`, {headers: headers})
+        axios.get(api.host+`/api/cook/getAcceptedOrders?page=${page}`, {headers: headers})
             .then(function (response) {
 
                 console.log(response)
@@ -37,7 +38,7 @@ const UnreadyOrders = () => {
 
     function changeReady(id) {
 
-        axios.post(`http://localhost:8081/api/cook/receivedOrder/` + id, {headers: headers})
+        axios.post(api.host+`/api/cook/receivedOrder/` + id, {headers: headers})
             .then(function (response) {
 
                 toast.success(response.data.message)

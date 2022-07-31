@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import Button from "../../components/ui/Button";
 import Nav from "../../components/Nav";
+import {api} from "../../constants/api";
 
 const Index = () => {
     const [orderHistory, setOrderHistory] = useState([]);
@@ -20,7 +21,7 @@ const Index = () => {
 
     useEffect(() => {
         console.log(page + ' shu page ')
-        axios.get(`http://localhost:8081/order/orderHistory?page=${page}`, {headers: headers})
+        axios.get(api.host+`/order/orderHistory?page=${page}`, {headers: headers})
             .then(function (response) {
 
                 console.log(response.data.data.content)

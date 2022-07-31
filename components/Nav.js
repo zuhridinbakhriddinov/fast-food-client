@@ -20,7 +20,7 @@ import Link from "next/link";
 import SlideOver from "./ui/SlideOverContent";
 import Cart from "./menu/Cart";
 import {ChevronDownIcon} from "@heroicons/react/solid";
-import {changeLanguage} from "../constants/api";
+import {api, changeLanguage} from "../constants/api";
 import {Image} from "react-bootstrap";
 
 function Nav() {
@@ -85,7 +85,7 @@ function Nav() {
         if (phoneNumberForRegister === null) {
             toast.error("Phone number not blank")
         } else {
-            axios.get('https://fast-food-app-server.herokuapp.com/api/v1/verification/send/forRegister/' + phoneNumberForRegister)
+            axios.get(api.host+'/api/v1/verification/send/forRegister/' + phoneNumberForRegister)
                 .then(function (response) {
                     toast.success(response.data.message)
                     setRegisterUserDto({...registerUserDto, phoneNumber: phoneNumberForRegister});
@@ -103,7 +103,7 @@ function Nav() {
 
     function smsCodeForLogin() {
 
-        axios.get('https://fast-food-app-server.herokuapp.com/api/v1/verification/send/forLogin/' + phoneNumberForLogin)
+        axios.get(api.host+'/api/v1/verification/send/forLogin/' + phoneNumberForLogin)
             .then(function (response) {
                 //console.log(messageService(response))
 
@@ -132,7 +132,7 @@ function Nav() {
     };
 
     function registerUser() {
-        axios.post('https://fast-food-app-server.herokuapp.com/api/v1/auth/register', {
+        axios.post(api.host+'/api/v1/auth/register', {
             "fullName": registerUserDto.fullName,
             "phoneNumber": registerUserDto.phoneNumber,
             "smsCode": registerUserDto.smsCode
@@ -168,7 +168,7 @@ function Nav() {
     }
 
     function loginUser() {
-        axios.post('https://fast-food-app-server.herokuapp.com/api/v1/auth/login', {
+        axios.post(api.host+'/api/v1/auth/login', {
                 "phoneNumber": loginUserDto.phoneNumber,
                 "smsCode": loginUserDto.smsCode
             },

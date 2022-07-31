@@ -8,7 +8,8 @@ export const api = {
     register: '/api/v1/auth/register',
     verificationSendForRegister: '/api/v1/verification/send/forRegister/',
     getFoods: "/api/v1/food",
-    host:"http://localhost:8081"
+   // host:"http://localhost:8081",
+    host:"https://fast-food-app-server.herokuapp.com"
 
 }
 
